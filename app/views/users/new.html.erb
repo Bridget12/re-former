@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>
+</title>
+</head>
+<body>
+<h5>REFORMER</h5>
+<form action="/users" method="post" accept-charset="UTF-8">
+<!--Testing Error Messages-->
+<%# if @user.errors.any? %>
+<!--<h5>Errors</h5>
+<ul>
+<%# @user.errors.full_messages.each do |message| %>
+<li><%#= message %></li>
+<%#end %>
+</ul>
+<%# end %>-->
+<!--End Testing For Error Messages-->
+
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  username: <input type="text" name="username">
+  <% if @user.errors[:username].any? %>
+        <font color="red">username <%=  @user.errors[:username].first %></font>
+      <% end %><br><br>
+  email: <input type="text" name="email">
+  <% if @user.errors[:email].any? %>
+        <font color="red">email <%=  @user.errors[:email].first %></font>
+      <% end %><br><br>
+  password: <input type="text" name="password">
+  <% if @user.errors[:password].any? %>
+        <font color="red">password <%=  @user.errors[:password].first %></font>
+      <% end %><br><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>

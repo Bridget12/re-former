@@ -14,19 +14,19 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
+  password: 123456
   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
-  database: re-former_development
+  database: formpractice
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: re-former_test
+  database: formpractice
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: re-former_production
+  database: formpractice
   username: re-former
   password: <%= ENV['RE-FORMER_DATABASE_PASSWORD'] %>
