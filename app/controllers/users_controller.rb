@@ -50,5 +50,15 @@ end
 
 end
 
+def destroy
+	@users = User.find_by(userid: params[:userid])
 
+    if @users.delete
+      
+      redirect_to root_path
+    else
+      
+      render :destroy
+    end
+end
 end

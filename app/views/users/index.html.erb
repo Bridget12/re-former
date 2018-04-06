@@ -12,6 +12,7 @@
  <td><b>Email</b></td>
  <td><b>Password</b></td>
  <td><b>Edit User</b></td>
+ <td><b>Delete User</b></td>
  </tr>
  <% counter = 0 %>
 <% @users.each do |s| %>
@@ -22,6 +23,7 @@
  <td><%=s.email %></td>
  <td><%=s.password%></td>
  <td><a href="/users/edit/<%=s.userid%>">Edit</a></td>
+ <td><a href="/users/delete/<%=s.userid%>">Delete</a></td>
  </tr> 
  <% end %> 
  </table>

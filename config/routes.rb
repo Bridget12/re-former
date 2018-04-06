@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get "/users/edit/:userid" => "users#edit"
   post "/users/:userid" => "users#update"
 
+  get "/users/delete/:userid" => "users#destroy"
+
 end
